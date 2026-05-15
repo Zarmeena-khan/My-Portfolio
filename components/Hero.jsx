@@ -55,10 +55,12 @@ export default function Hero() {
           <div className="absolute -inset-6 rounded-full bg-cyan-300/20 blur-[100px]" />
           <div className="relative flex h-full w-full items-center justify-center rounded-full border border-cyan-400/30 bg-[#07131f] shadow-glow">
             <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,_rgba(0,212,212,0.18),_transparent_55%)]" />
-            <div className="relative h-[86%] w-[86%] overflow-hidden rounded-full border border-[rgba(255,255,255,0.08)] bg-[#081522]">
-              <span className="flex h-full w-full items-center justify-center text-center text-sm font-semibold text-slate-200">
-                Profile Image Placeholder
-              </span>
+            <div className="relative h-[86%] w-[86%] overflow-hidden rounded-full border border-cyan-400/40 bg-[#081522] ring-2 ring-cyan-400/20 shadow-[0_0_40px_rgba(45,248,255,0.18)]">
+              <img
+                src="/my-picture.jpeg"
+                alt="Profile picture"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>

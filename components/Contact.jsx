@@ -22,7 +22,7 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setFeedback("");
     setStatus("idle");
@@ -33,13 +33,37 @@ export default function Contact() {
       return;
     }
 
-    const subject = formData.subject || `New message from ${formData.fullName}`;
-    const body = `Name: ${formData.fullName}%0D%0AEmail: ${formData.email}%0D%0A%0D%0A${formData.message}`;
-    window.location.href = `mailto:zarmeenakhan370@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setIsSubmitting(true);
 
-    setStatus("success");
-    setFeedback("Your email client should open so you can send the message.");
-    setFormData(initialForm);
+    try {
+      const response = await fetch("https://formspree.io/f/xwvydaze", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFeedback("Message sent successfully!");
+        setFormData(initialForm);
+      } else {
+        setStatus("error");
+        setFeedback("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setStatus("error");
+      setFeedback("An error occurred. Please try again.");
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -127,7 +151,7 @@ export default function Contact() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="zarmeenakhan370@gmail.com"
+            placeholder="yourEmail@gmail.com"
             required
             className="w-full rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#07111f] px-5 py-4 text-sm text-white placeholder:text-muted focus:border-accent focus:outline-none"
           />

@@ -67,8 +67,8 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <a
-              href="/resume.pdf"
-              download="Zarmeena-Khan-CV.pdf"
+              href="/Zarmeena_Khan_CV_Done.pdf"
+              download="Zarmeena_Khan_CV_Done.pdf"
               className="inline-flex items-center rounded-2xl bg-red-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-red-500"
             >
               Download CV
@@ -81,8 +81,8 @@ export default function Navbar() {
         <div className="space-y-3 border-t border-[rgba(0,212,212,0.14)] px-6 py-4 md:hidden">
           <div className="flex items-center justify-between">
             <a
-              href="/resume.pdf"
-              download="Zarmeena-Khan-CV.pdf"
+              href="/Zarmeena_Khan_CV_Done.pdf"
+              download="Zarmeena_Khan_CV_Done.pdf"
               className="inline-flex items-center rounded-2xl bg-red-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-red-500"
             >
               Download CV
