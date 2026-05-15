@@ -111,7 +111,7 @@ export default function Contact() {
                   label: "LinkedIn",
                 },
                 {
-                  href: "mailto:zarmeenakhan370@gmail.com",
+                  href: "https://mail.google.com",
                   Icon: Mail,
                   label: "Email",
                 },

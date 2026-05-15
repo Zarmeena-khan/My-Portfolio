@@ -59,7 +59,7 @@ export default function Hero() {
               <img
                 src="/my-picture.jpeg"
                 alt="Profile picture"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-center"
               />
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function Hero() {
               label: "LinkedIn",
             },
             {
-              href: "mailto:zarmeenakhan370@gmail.com",
+              href: "https://mail.google.com",
               Icon: Mail,
               label: "Email",
             },
